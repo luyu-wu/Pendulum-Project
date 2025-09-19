@@ -14,6 +14,7 @@ fig, (ax1,ax2) = plt.subplots(2)
 
 time = my_data[:,0]
 x_displacement = my_data[:,1]
+x_displacement -= np.average(x_displacement)
 
 if savgol:
     x_displacement_filtered = sgn.savgol_filter(x_displacement, 41, 3)
@@ -27,17 +28,28 @@ if savgol:
     x_displacement_interp = f(time_interp)
 
     peaks, _ = sgn.find_peaks(x_displacement_interp)
-    peak_times_for_plot = time_interp[peaks]
+    peak_times = time_interp[peaks]
     peak_values_for_plot = x_displacement_interp[peaks]
-    ax1.plot(time_interp, x_displacement_interp)
 
+    peaks_b, _ = sgn.find_peaks(-x_displacement_interp)
+    peak_times_b = time_interp[peaks_b]
+    peak_values_for_plot_b = x_displacement_interp[peaks_b]
+
+    ax1.plot(time_interp, x_displacement_interp,label="Interpolated")
 else:
     peaks, _ = sgn.find_peaks(x_displacement)
     peak_times_for_plot = time[peaks]
     peak_values_for_plot = x_displacement[peaks]
 
+    peaks_b, _ = sgn.find_peaks(-x_displacement)
+    peak_times_for_plot_b = time[peaks_b]
+    peak_values_for_plot_b = x_displacement[peaks_b]
+
+
 ax1.plot(time, x_displacement)
-ax1.plot(peak_times_for_plot, peak_values_for_plot, 'ro', markersize=6, label='Peaks')
+ax1.plot(peak_times, peak_values_for_plot, 'ro', markersize=6, label='Peaks')
+ax1.plot(peak_times_b, peak_values_for_plot_b, 'ro', markersize=6, label='Peaks')
+
 ax1.set_ylabel("X-Displacement (m)")
 ax1.set_xlabel("Time (s)")
 ax1.legend()
@@ -67,9 +79,8 @@ plt.show()
 
 if len(peaks) > 1:
     if savgol:
-        peak_times = time_interp[peaks]
-        periods = np.diff(peak_times)
-        amplitudes = x_displacement_interp[peaks[:-1]]
+        periods = np.concatenate((np.diff(peak_times),np.diff(peak_times_b)))
+        amplitudes = np.concatenate((x_displacement_interp[peaks[:-1]],-x_displacement_interp[peaks_b[:-1]]))
     else:
         peak_times = my_data[peaks,0]
         periods = np.diff(peak_times)
