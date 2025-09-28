@@ -8,6 +8,8 @@ from scipy.interpolate import interp1d
 import numpy.linalg as la
 
 my_data = genfromtxt('data2.csv', delimiter=',')
+#my_data2 = genfromtxt('data.csv', delimiter=',')
+
 my_data = my_data[140:]
 my_data[:,0] -= my_data[0,0] # Set time baseline
 
@@ -48,7 +50,7 @@ plt.tight_layout()
 plt.show()
 
 ## FOURIER TRANSFORM ##
-freq = np.fft.fftfreq(len(x_displacement), dt)
+freq = np.fft.fftfreq(len(theta), dt)
 fft_x = np.fft.fft(x_displacement)
 
 plt.figure()
@@ -101,24 +103,50 @@ print(f"Decay rate: {decay_rate:.4f} s⁻¹")
 
 
 ## PERIOD AMPLITUDE ##
+
 periods = np.concatenate((np.diff(time[peaks]),np.diff(time[peaks_b])))
 amplitudes = np.concatenate((theta[peaks[:-1]],theta[peaks_b[:-1]]))
-#amplitudes = np.degrees(amplitudes)
-fit = np.polyfit(amplitudes,periods,2)
-#print(fit)
 
-# Variance Calculation
-error = 0
-for i_t,i_a in zip(amplitudes,periods):
-    error += (np.polyval(fit,i_t)-i_a)**2
-error /= 3*(len(periods)-3)
-error = np.sqrt(error)
+y_error = []
+x_error = []
+temp_store_periods = []
+temp_store_amplitudes = []
+i = 0
+while i < len(periods):
+    done = False
+    if i+1 != len(periods):
+        if abs(amplitudes[i]-amplitudes[i+1]) < 0.05:
+            temp_store_periods.append(periods[i+1])
+            temp_store_amplitudes.append(amplitudes[i+1])
+            periods = np.delete(periods,i+1)
+            amplitudes = np.delete(amplitudes,i+1)
+        else:
+            done = True
+    else:
+        done = True
+    if done:
+        temp_store_periods.append(periods[i])
+        temp_store_amplitudes.append(amplitudes[i])
+        y_error.append(np.std(temp_store_periods))
+        x_error.append(np.std(temp_store_amplitudes))
+        periods[i] = np.average(temp_store_periods)
+        amplitudes[i] = np.average(temp_store_amplitudes)
+        temp_store_amplitudes, temp_store_periods = [],[]
+        i += 1
+y_error = np.array(y_error)
+y_error[y_error == 0] = y_error.max()
+fit,cov = np.polyfit(amplitudes,periods,2,cov=True)
+print("Fit:",fit)
+fit_err = np.sqrt(np.diag(cov))
+print("Error:",fit_err)
 
 x_vals = np.linspace(amplitudes.min()*1.2,amplitudes.max()*1.2,300)
 plt.figure()
 plt.plot(x_vals,np.polyval(fit,x_vals),'--',alpha=0.3,label="Fit Line (Quad.)")
+plt.fill_between(x_vals,np.polyval(fit-fit_err,x_vals),y2=np.polyval(fit+fit_err,x_vals),alpha=0.2)
+
 plt.axhline(y=2*np.pi*np.sqrt(length/9.81), color='r', linestyle='--', label='Small-Angle Approximation')
-plt.errorbar(amplitudes, periods,yerr=error,fmt='.',capsize=2,ms=2,c='black')
+plt.errorbar(amplitudes, periods,yerr=y_error,xerr=x_error,fmt='.',capsize=2,ms=2,c='black')
 plt.xlabel("Amplitude ($rad.$)")
 plt.ylabel("Period (s)")
 plt.xlim(x_vals.min(),x_vals.max())
@@ -126,3 +154,13 @@ plt.title("Period vs Amplitude")
 plt.grid(alpha=0.5)
 plt.legend()
 plt.show()
+
+plt.errorbar(amplitudes,periods-np.polyval(fit,amplitudes),yerr=y_error,fmt='.',capsize=2,ms=2,c='black')
+plt.axhline(y=0, color='r', linestyle='--', label='')
+plt.title("Residuals?? hehe")
+plt.xlabel("Amplitude ($rad.$)")
+plt.ylabel("Delta Period (s-$s_0$)")
+plt.ylim(-0.1,0.1)
+plt.show()
+
+

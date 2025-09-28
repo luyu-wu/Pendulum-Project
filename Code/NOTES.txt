@@ -1,0 +1,15 @@
+Exponential Fit not being correct is fine
+
+Define a few damping forces
+
+proportional to v, v^2, sgn(v) (turbulent, viscous, and couloumb/dry)
+
+
+
+MUST TEST Prediction that Q-factor is constant with angle. 
+
+
+QUESTION: Does showing that the log(theta) is not linear show that Q is not constant
+
+
+MUST CHANGE: Add error bars by bunching up data
