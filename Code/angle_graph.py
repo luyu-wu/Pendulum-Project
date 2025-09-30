@@ -1,11 +1,9 @@
-from typing import List
 import matplotlib.pyplot as plt
 import numpy as np
 import scipy.signal as sgn
-import smplotlib
+import smplotlib  # noqa
 from numpy import genfromtxt
 from scipy.interpolate import interp1d
-import numpy.linalg as la
 
 my_data = genfromtxt("data2.csv", delimiter=",")
 # my_data2 = genfromtxt('data.csv', delimiter=',')
@@ -21,33 +19,34 @@ x_displacement = my_data[:, 1]
 y_displacement = my_data[:, 2]
 x_displacement_filtered = sgn.savgol_filter(x_displacement, 21, 3)
 y_displacement_filtered = sgn.savgol_filter(y_displacement, 21, 3)
-
 rate = 1000  # points per second
 # Interpolate data
-f_x,f_y = interp1d(
-    time,
-    x_displacement_filtered,
-    kind="cubic",
-    bounds_error=False,
-    fill_value="extrapolate",
-),interp1d(
-    time,
-    y_displacement_filtered,
-    kind="cubic",
-    bounds_error=False,
-    fill_value="extrapolate",
+f_x, f_y = (
+    interp1d(
+        time,
+        x_displacement_filtered,
+        kind="cubic",
+        bounds_error=False,
+        fill_value="extrapolate",
+    ),
+    interp1d(
+        time,
+        y_displacement_filtered,
+        kind="cubic",
+        bounds_error=False,
+        fill_value="extrapolate",
+    ),
 )
 time = np.linspace(0, time.max(), int(time.max() * rate))
 dt = 1 / rate  # time step
-x_displacement,y_displacement = f_x(time),f_y(time)
+x_displacement, y_displacement = f_x(time), f_y(time)
 
-theta = np.arctan(x_displacement/y_displacement)#np.arcsin(x_displacement / length)
+theta = np.arctan(x_displacement / y_displacement)  # np.arcsin(x_displacement / length)
 
 peaks, _ = sgn.find_peaks(theta)
 peaks_b, _ = sgn.find_peaks(-theta)
 
 ax1.plot(time, theta)
-# ax1.plot(my_data[:,0],np.arcsin(my_data[:,1]/length),'--')
 ax1.plot(time[peaks], theta[peaks], "ro", markersize=4, label="Peaks")
 ax1.plot(time[peaks_b], theta[peaks_b], "ro", markersize=4)
 ax1.grid(alpha=0.5)
@@ -59,13 +58,14 @@ ax1.set_title("Pendulum Angle vs. Time")
 plt.tight_layout()
 plt.show()
 
-fig, ax2 = plt.subplots()
 
+## ENERGY GRAPH ##
+fig, ax2 = plt.subplots()
 mg = 9.8 * length * (1 - np.cos(theta))
 ke = 0.5 * ((np.gradient(theta) / dt) * length) ** 2
-ax2.plot(time,  (mg + ke))
-ax2.plot(time,mg,'--',c='b',label="Gravitational",alpha=0.2)
-ax2.plot(time,ke,'--',c='r',label="Kinetic",alpha=0.2)
+ax2.plot(time, (mg + ke))
+ax2.plot(time, mg, "--", c="b", label="Gravitational", alpha=0.2)
+ax2.plot(time, ke, "--", c="r", label="Kinetic", alpha=0.2)
 ax2.legend()
 ax2.grid(alpha=0.5)
 ax2.set_ylabel("Energy($J/kg$)")
@@ -130,7 +130,7 @@ plt.plot(
 )
 
 plt.xlabel("Time (s)")
-plt.yscale('log')
+plt.yscale("log")
 plt.ylabel("Amplitude ($rad$)")
 plt.ylim(np.min(peak_amplitudes) * 0.95, np.max(theta) * 1.05)
 plt.xlim(-10, np.max(peak_times) + 10)

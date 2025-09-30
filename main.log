@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.6)  17 SEP 2025 12:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.6)  30 SEP 2025 11:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -454,7 +454,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip63
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 20.
+Package hyperref Info: Option `colorlinks' set `true' on input line 15.
 
 (/usr/share/texmf-dist/tex/latex/doublestroke/dsfont.sty
 Package: dsfont 1995/08/01 v0.1 Double stroke roman fonts
@@ -495,31 +495,31 @@ Package: lipsum 2021-09-20 v2.7 150 paragraphs of Lorem Ipsum dummy text
 
 (/usr/share/texmf-dist/tex/latex/lipsum/lipsum.ltd.tex))
 Class revtex4-2 Info: colortbl package is loaded. (Proceeding with fingers cros
-sed.) on input line 29.
-Class revtex4-2 Info: cite was not loaded (OK!) on input line 29.
-Class revtex4-2 Info: mcite was not loaded (OK!) on input line 29.
-Class revtex4-2 Info: multicol was not loaded (OK!) on input line 29.
+sed.) on input line 23.
+Class revtex4-2 Info: cite was not loaded (OK!) on input line 23.
+Class revtex4-2 Info: mcite was not loaded (OK!) on input line 23.
+Class revtex4-2 Info: multicol was not loaded (OK!) on input line 23.
  (./main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -535,412 +535,98 @@ LaTeX Font Info:    ... okay on input line 29.
 \makeMPintoPDFobject=\count312
 \everyMPtoPDFconversion=\toks37
 )
-Package hyperref Info: Link coloring ON on input line 29.
+Package hyperref Info: Link coloring ON on input line 23.
  (./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
-Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 29.
+Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 23.
 \openout3 = `mainNotes.bib'.
 
 
 
-LaTeX Warning: File `force_diagram.png' not found on input line 52.
+Class revtex4-2 Warning: Assuming \noaffiliation for authors.
 
-
-! Package pdftex.def Error: File `force_diagram.png' not found: using draft set
-ting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.52 ...cs[width=0.8\linewidth]{force_diagram.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Trying to load font information for U+msa on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 37.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 61.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 37.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: File `setup.png' not found on input line 103.
-
-
-! Package pdftex.def Error: File `setup.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.103 ...graphics[width=0.66\linewidth]{setup.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `tracking.png' not found on input line 113.
-
-
-! Package pdftex.def Error: File `tracking.png' not found: using draft setting.
-
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.113 ...aphics[width=0.9\linewidth]{tracking.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `trig_transform.png' not found on input line 122.
-
-
-! Package pdftex.def Error: File `trig_transform.png' not found: using draft se
-tting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.122 ...[width=0.6\linewidth]{trig_transform.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 131.
-
-
-LaTeX Warning: File `verify_track.png' not found on input line 141.
-
-
-! Package pdftex.def Error: File `verify_track.png' not found: using draft sett
-ing.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.141 ...s[width=0.75\linewidth]{verify_track.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `RMSE_fitting.png' not found on input line 153.
-
-
-! Package pdftex.def Error: File `RMSE_fitting.png' not found: using draft sett
-ing.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.153 ...hics[width=1\linewidth]{RMSE_fitting.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `magnet_fit.png' not found on input line 161.
-
-
-! Package pdftex.def Error: File `magnet_fit.png' not found: using draft settin
-g.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.161 ...raphics[width=\linewidth]{magnet_fit.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `eddy_currents.png' not found on input line 172.
-
-
-! Package pdftex.def Error: File `eddy_currents.png' not found: using draft set
-ting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.172 ...hics[width=\linewidth]{eddy_currents.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[2]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 177.
-
-
-LaTeX Warning: File `single_phases.png' not found on input line 184.
-
-
-! Package pdftex.def Error: File `single_phases.png' not found: using draft set
-ting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.184 ...hics[width=\linewidth]{single_phases.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `frequency_time.png' not found on input line 193.
-
-
-! Package pdftex.def Error: File `frequency_time.png' not found: using draft se
-tting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.193 ...ics[width=\linewidth]{frequency_time.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `magnet_strength.png' not found on input line 196.
-
-
-! Package pdftex.def Error: File `magnet_strength.png' not found: using draft s
-etting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.196 ...cs[width=\linewidth]{magnet_strength.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[3]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 203.
-
-
-LaTeX Warning: File `increasing_eccentricity.png' not found on input line 206.
-
-
-! Package pdftex.def Error: File `increasing_eccentricity.png' not found: using
- draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.206 ...=\linewidth]{increasing_eccentricity.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `fractal.png' not found on input line 218.
-
-
-! Package pdftex.def Error: File `fractal.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.218 ...degraphics[width=\linewidth]{fractal.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[4]
-
-LaTeX Warning: File `basin_zone.png' not found on input line 230.
-
-
-! Package pdftex.def Error: File `basin_zone.png' not found: using draft settin
-g.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.230 ...raphics[width=\linewidth]{basin_zone.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `start_length.png' not found on input line 241.
-
-
-! Package pdftex.def Error: File `start_length.png' not found: using draft sett
-ing.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.241 ...phics[width=\linewidth]{start_length.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `end_length.png' not found on input line 246.
-
-
-! Package pdftex.def Error: File `end_length.png' not found: using draft settin
-g.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.246 ...raphics[width=\linewidth]{end_length.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `start_strength.png' not found on input line 255.
-
-
-! Package pdftex.def Error: File `start_strength.png' not found: using draft se
-tting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.255 ...ics[width=\linewidth]{start_strength.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `end_strength.png' not found on input line 260.
-
-
-! Package pdftex.def Error: File `end_strength.png' not found: using draft sett
-ing.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.260 ...phics[width=\linewidth]{end_strength.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `3rdattractor.png' not found on input line 273.
-
-
-! Package pdftex.def Error: File `3rdattractor.png' not found: using draft sett
-ing.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.273 ...cs[width=0.8\linewidth]{3rdattractor.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-
-LaTeX Warning: File `3dhills.png' not found on input line 295.
-
-
-! Package pdftex.def Error: File `3dhills.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.295 ...raphics[width=0.8\linewidth]{3dhills.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-[5]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 301.
-
-
-LaTeX Warning: File `3rddip.png' not found on input line 305.
-
-
-! Package pdftex.def Error: File `3rddip.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.305 ...graphics[width=0.7\linewidth]{3rddip.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
+<setup.png, id=44, 592.46344pt x 447.17062pt>
+File: setup.png Graphic file (type png)
+<use setup.png>
+Package pdftex.def Info: setup.png  used on input line 52.
+(pdftex.def)             Requested size: 147.6015pt x 111.40344pt.
+<tracker.png, id=46, 757.32938pt x 548.80031pt>
+File: tracker.png Graphic file (type png)
+<use tracker.png>
+Package pdftex.def Info: tracker.png  used on input line 66.
+(pdftex.def)             Requested size: 172.19925pt x 124.78108pt.
+ [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./setup.png> <./tracker
+.png>]
+<angle_time.png, id=66, 413.74574pt x 414.1071pt>
+File: angle_time.png Graphic file (type png)
+<use angle_time.png>
+Package pdftex.def Info: angle_time.png  used on input line 78.
+(pdftex.def)             Requested size: 246.0pt x 246.21669pt.
+<amp-per.png, id=67, 457.4691pt x 407.96416pt>
+File: amp-per.png Graphic file (type png)
+<use amp-per.png>
+Package pdftex.def Info: amp-per.png  used on input line 86.
+(pdftex.def)             Requested size: 246.0pt x 219.38228pt.
+<decay.png, id=68, 396.7623pt x 406.1574pt>
+File: decay.png Graphic file (type png)
+<use decay.png>
+Package pdftex.def Info: decay.png  used on input line 97.
+(pdftex.def)             Requested size: 196.80075pt x 201.46066pt.
+<q_amplitude.png, id=69, 397.12366pt x 406.1574pt>
+File: q_amplitude.png Graphic file (type png)
+<use q_amplitude.png>
+Package pdftex.def Info: q_amplitude.png  used on input line 103.
+(pdftex.def)             Requested size: 196.80075pt x 201.28093pt.
+<q-time.png, id=70, 397.12366pt x 406.1574pt>
+File: q-time.png Graphic file (type png)
+<use q-time.png>
+Package pdftex.def Info: q-time.png  used on input line 108.
+(pdftex.def)             Requested size: 196.80075pt x 201.28093pt.
+ [2 <./angle_time.png>]
 No file main.bbl.
-[6] (./main.aux)
+[3 <./amp-per.png> <./decay.png>] [4 <./q_amplitude.png> <./q-time.png>]
+(./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 86EEC6A2B1B648226CD3F5F0DF8BBC69;1749.
+(rerunfilecheck)             Checksum: AD7AD307CBA4CEB605FDB2D3F9EBC98D;1300.
  ) 
 Here is how much of TeX's memory you used:
- 13958 strings out of 475171
- 217852 string characters out of 5767096
- 738223 words of memory out of 5000000
- 36704 multiletter control sequences out of 15000+600000
- 569359 words of font info for 75 fonts, out of 8000000 for 9000
+ 13322 strings out of 475171
+ 201782 string characters out of 5767096
+ 718100 words of memory out of 5000000
+ 36093 multiletter control sequences out of 15000+600000
+ 568846 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 79i,19n,93p,583b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 79i,6n,93p,583b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
 texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/font
 s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></u
-sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texmf
--dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texmf-dist/fonts/typ
-e1/public/amsfonts/symbols/msam10.pfb>
-Output written on main.pdf (6 pages, 190972 bytes).
+mmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on main.pdf (4 pages, 1159782 bytes).
 PDF statistics:
- 206 PDF objects out of 1000 (max. 8388607)
- 168 compressed objects within 2 object streams
- 45 named destinations out of 1000 (max. 500000)
- 105 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 149 PDF objects out of 1000 (max. 8388607)
+ 105 compressed objects within 2 object streams
+ 22 named destinations out of 1000 (max. 500000)
+ 116 words of extra memory for PDF output out of 10000 (max. 10000000)
 
