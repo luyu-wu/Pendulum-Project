@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1759468192.91674 "main.aux" "main.bbl" "main" 1759468194.12787 0
-  "./mainNotes.bib" 1759468194.02639 104 4d8bb863c86f3d7b03a471e9d4707f34 ""
+["bibtex main"] 1759514315.30872 "main.aux" "main.bbl" "main" 1759514972.17249 0
+  "./mainNotes.bib" 1759514971.85909 104 4d8bb863c86f3d7b03a471e9d4707f34 ""
   "/usr/share/texmf-dist/bibtex/bst/revtex/apsrev4-2.bst" 1755987285 69609 e9dea59f0e753ccda3ddc8f5806d846d ""
-  "main.aux" 1759468194.02539 5335 5f0d1c7fad90045b10f64786123401d0 "pdflatex"
+  "main.aux" 1759514971.85809 6759 c1d8eb5d4b9a45eaae77fec257819945 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1759468192.95267 "/home/chrysanthemum/Code/Pendulum-Project/main.tex" "main.pdf" "main" 1759468194.12801 0
-  "/home/chrysanthemum/Code/Pendulum-Project/main.tex" 1759468191.67639 9029 fb30bf6b5e16eaebf1b8e7663f0e494d ""
+["pdflatex"] 1759514967.90577 "/home/chrysanthemum/Code/Pendulum-Project/main.tex" "main.pdf" "main" 1759514972.1729 0
+  "/home/chrysanthemum/Code/Pendulum-Project/main.tex" 1759514967.71306 12342 9f8e67e02d7a99be8c4f8b5dd318b06d ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1755987285 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1755987285 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1755987285 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -41,6 +41,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr9.tfm" 1755987285 1292 6b21b9c2c7bebb38aa2273f7ca0fb3af ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1755987285 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1755987285 1116 25a7bf822c58caf309a702ef79f4afbb ""
+  "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb" 1755987285 34811 78b52f49e893bcba91bd7581cdc144c0 ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1755987285 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb" 1755987285 32298 c6d25bb16d1eac01ebdc6d7084126a1e ""
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1755987285 30251 6afa5cb1d0204815a708a080681d4674 ""
@@ -133,15 +134,16 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1757177955 5311557 9da84c45f5b388655502706482323571 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1757177948 2008234 8709edf15ed7505c096f6057acc6fe99 ""
+  "Q-factor-smallangleusage.png" 1759506108.79409 81671 c8afd92384063be275d6f3c1223c56dc ""
   "amp_per_error_of_mean.png" 1759465342.62872 107379 5086e3d31c9d769b065d8a7a7cfe89b1 ""
   "angle_time.png" 1759464858.85089 114407 ec48aa2d985aa9bbd1f35e9412086cbd ""
-  "count_decay.png" 1759467992.00066 85385 6baf19393450fc325a829be34f3a45a7 ""
+  "count_decay.png" 1759502482.98879 85447 b176c928f9c1a1d03872d57d66046ae0 ""
   "decay.png" 1759466431.25429 118341 f71a98d3aa82ae420072c863d00c91a4 ""
-  "low_angle_q.png" 1759468139.84162 130127 e4d44298f4a9fe8bcb5687c76022d880 ""
-  "main.aux" 1759468194.02539 5335 5f0d1c7fad90045b10f64786123401d0 "pdflatex"
-  "main.bbl" 1759468192.94939 1982 35453d3875d823f0ec9445e740a573d9 "bibtex main"
-  "main.out" 1759468194.02639 1969 14ee3bbcce221fa24d10eb5c24e5d503 "pdflatex"
-  "main.tex" 1759468191.67639 9029 fb30bf6b5e16eaebf1b8e7663f0e494d ""
+  "low_angle_q.png" 1759506714.15093 130311 ce41e37982f1d6e7c8332e71333505f3 ""
+  "main.aux" 1759514971.85809 6759 c1d8eb5d4b9a45eaae77fec257819945 "pdflatex"
+  "main.bbl" 1759514315.43214 1982 35453d3875d823f0ec9445e740a573d9 "bibtex main"
+  "main.out" 1759514971.85909 2037 0d02d02f519eab4c58c5aef03ed54142 "pdflatex"
+  "main.tex" 1759514967.71306 12342 9f8e67e02d7a99be8c4f8b5dd318b06d ""
   "out-of-plane.png" 1759264254.51208 167009 68bcdfbcedad64faeda0d58f026f6777 ""
   "pendulum-body.png" 1759462674.90887 13178 8a1d1de723254b2bc1676e2b64c00a81 ""
   "setup.png" 1759243903.91048 297568 e1a6b7454d7b1fb86b2b22fffab26781 ""

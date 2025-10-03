@@ -104,13 +104,14 @@ fit_err = np.sqrt(np.diag(cov))
 # For underdamped oscillator: Q = ω₀/(2γ) where γ = 1/tau
 omega_0 = 2 * np.pi * (1 / (np.average(np.diff(peak_times))))
 Q_factor = omega_0 / (-2 * decay_fit[0])
-
+Q_fac_error = abs(Q_factor-(omega_0 / (-2 * (decay_fit[0]-fit_err[0]))))
+print(Q_fac_error)
 t_fit = np.linspace(-10, np.max(peak_times) + 10, 20)
 amplitude_fit = np.exp(np.polyval(decay_fit, t_fit))
 
 plt.figure()
 plt.errorbar(peak_times,peak_amplitudes, fmt='o', xerr=0, yerr=b_error, markersize=4, alpha=0.5, label="Data")
-plt.plot(t_fit, amplitude_fit, "--", label=f"Exponential Fit (Q = {Q_factor:.2f})")
+plt.plot(t_fit, amplitude_fit, "--", label="Exponential Fit ($Q = 202 \\pm 0.9$)")
 
 plt.fill_between(
     t_fit,
@@ -118,7 +119,6 @@ plt.fill_between(
     y2=np.exp(np.polyval(decay_fit-fit_err, t_fit)),
     alpha=0.2,
 )
-
 
 plt.xlabel("Time (s)")
 plt.ylabel("Amplitude ($rad$)")
@@ -132,7 +132,7 @@ plt.show()
 plt.errorbar(1+np.arange(len(peak_amplitudes)),peak_amplitudes, fmt='o', xerr=0, yerr=b_error, markersize=4, alpha=0.5, label="Data")
 plt.xlabel("Number of Oscillations")
 plt.ylabel("Amplitude ($rad$)")
-plt.axhline(y=np.max(peak_amplitudes)*np.exp(-np.pi/4), color="r", linestyle="--",label="$e^{\\pi/4}$")
+plt.axhline(y=np.max(peak_amplitudes)*np.exp(-np.pi/4), color="r", linestyle="--",label="$e^{-\\pi/4}$")
 plt.axvline(x=45,ls='--',c='b')
 plt.axvline(x=55,ls='--',c='b')
 
@@ -201,7 +201,6 @@ plt.errorbar(
 plt.xlabel("Amplitude ($rad.$)")
 plt.ylabel("Period (s)")
 plt.xlim(x_vals.min(), x_vals.max())
-plt.title("Pendulum Period vs Oscillation Amplitude")
 plt.grid(alpha=0.5)
 plt.legend()
 plt.show()
