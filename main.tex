@@ -77,7 +77,7 @@ SciPy peak detection was performed to find local maxima. Periods were found by i
     \label{fig:angle_time}
 \end{figure}
 
-\section{Results}
+\section{Analysis}
 
 
 \subsection{Period Non-Linearity}
@@ -140,14 +140,14 @@ Using oscillation counting, the Q-factor is found to be $200\pm20$, where the la
 
 Importantly, the Q-factors found by the two different methods are highly similar and within error of each other ($202\pm0.9$ and $200\pm20$ respectively). This implies an accurate Q-value characterization of the system within the low-amplitude regime.
 
-\vspace{60pt}
+\vspace{64pt}
 \section{Determining Uncertainties}
 
 The uncertainty is selected between Type A and Type B depending on which is larger. In this section, the derivation of Type B errors are explained, given they are not clear in certain scenarios such when using camera tracking.
 
 The Type B uncertainty of the time of measurement (which propagates to period) is negligible as the camera's shutter speed is $1/1000$. Error seen in period-amplitude is thus calculated through Type A. This noise likely sources from amplitude Type B uncertainty, which through peak detection, translates into noise in period data.
 
-The uncertainty for the amplitude of the pendulum seen in Figure 6 and 7 are determined through the Type B uncertainty of the amplitude. The width of the pendulum (of which Tracker may not always select the centre of) causes measurement errors. It is calculated as $\epsilon = \frac{w}{2(l)}$ for a 68\% confidence. Measurement of the width was done in Tracker to calibrate error to the data (see Appendix C).
+The uncertainty for the amplitude of the pendulum seen in Figure 6 and 7 are determined through the Type B uncertainty of the amplitude. The width of the pendulum (of which Tracker may not always select the centre of) causes measurement errors. It is calculated as $\epsilon = \frac{w}{2(l)}$ for a 68\% confidence. Measurement of the width was done in Tracker to calibrate error to the data (see Appendix C). This error may be minimized by using an indicator (e.g. black dot) instead of tracking the whole blob.
 
 \section{Conclusion}
 In this report, various aspects of the pendulum's motion were investigated in relation to the offered closed-form equation.
