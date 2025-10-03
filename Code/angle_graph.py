@@ -12,7 +12,7 @@ my_data = my_data[140:]
 my_data[:, 0] -= my_data[0, 0]  # Set time baseline
 
 length = 0.745  # length in m for trig stuff lol
-b_error = 0.0075/(length*2)
+b_error = 0.0075 / (length * 2)
 
 # angle and energy
 fig, ax1 = plt.subplots()
@@ -48,7 +48,7 @@ theta = np.arctan(x_displacement / y_displacement)  # np.arcsin(x_displacement /
 peaks, _ = sgn.find_peaks(theta)
 peaks_b, _ = sgn.find_peaks(-theta)
 
-ax1.plot(time,theta)
+ax1.plot(time, theta)
 ax1.plot(time[peaks], theta[peaks], "ro", markersize=4, label="Peaks")
 ax1.plot(time[peaks_b], theta[peaks_b], "ro", markersize=4)
 ax1.grid(alpha=0.5)
@@ -70,7 +70,7 @@ ax2.plot(time, ke, c="r", label="Kinetic", alpha=0.2)
 ax2.legend()
 ax2.grid(alpha=0.5)
 ax2.set_ylabel("Energy($J/kg$)")
-ax2.set_ylim(0,6)
+ax2.set_ylim(0, 6)
 ax2.set_xlabel("Time (s)")
 
 plt.tight_layout()
@@ -97,31 +97,35 @@ plt.show()
 peak_times = time[peaks]
 peak_amplitudes = np.abs(theta[peaks])
 
-# Fit exponential decay: A(t) = A0 * exp(-t/tau)
-# Taking log: ln(A) = ln(A0) - t/tau
 decay_fit = np.polyfit(peak_times[:10], np.log(peak_amplitudes)[:10], 1)
-# For underdamped oscillator: Q = ω₀/(2γ) where γ = 1/tau
 omega_0 = 2 * np.pi * (1 / (np.average(np.diff(peak_times[:10]))))
 Q_factor = omega_0 / (-2 * decay_fit[0])
 
 t_fit = np.linspace(-10, np.max(peak_times) + 10, 20)
 amplitude_fit = np.exp(np.polyval(decay_fit, t_fit))
 
-# Fit exponential decay: A(t) = A0 * exp(-t/tau)
 # Taking log: ln(A) = ln(A0) - t/tau
 decay_fit_1 = np.polyfit(
     peak_times[15 : len(peak_times) - 1],
     np.log(peak_amplitudes)[15 : len(peak_times) - 1],
     1,
 )
-# For underdamped oscillator: Q = ω₀/(2γ) where γ = 1/tau
 omega_0_1 = 2 * np.pi * (1 / (np.average(np.diff(peak_times[:10]))))
 Q_factor_1 = omega_0_1 / (-2 * decay_fit_1[0])
 
 amplitude_fit_1 = np.exp(np.polyval(decay_fit_1, t_fit))
 
 plt.figure()
-plt.errorbar(peak_times,peak_amplitudes, fmt='o', xerr=0, yerr=b_error, markersize=4, alpha=0.5, label="Data")
+plt.errorbar(
+    peak_times,
+    peak_amplitudes,
+    fmt="o",
+    xerr=0,
+    yerr=b_error,
+    markersize=4,
+    alpha=0.5,
+    label="Data",
+)
 plt.plot(t_fit, amplitude_fit, "--", label=f"Exponential Fit 1 (Q = {Q_factor:.2f})")
 plt.plot(
     t_fit,
@@ -132,7 +136,7 @@ plt.plot(
 )
 
 plt.xlabel("Time (s)")
-#plt.yscale("log")
+# plt.yscale("log")
 plt.ylabel("Amplitude ($rad$)")
 plt.ylim(np.min(peak_amplitudes) * 0.95, np.max(theta) * 1.05)
 plt.xlim(-10, np.max(peak_times) + 10)
@@ -216,9 +220,9 @@ print("Error:", fit_err)
 # Variance Calculation
 
 error_mean = 0
-for i_t,i_a in zip(amplitudes,periods):
-    error_mean += (np.polyval(fit,i_t)-i_a)**2
-error_mean /= 3*(len(periods)-3)
+for i_t, i_a in zip(amplitudes, periods):
+    error_mean += (np.polyval(fit, i_t) - i_a) ** 2
+error_mean /= 3 * (len(periods) - 3)
 error_mean = np.sqrt(error_mean)
 
 x_vals = np.linspace(amplitudes.min() * 1.2, amplitudes.max() * 1.2, 300)
@@ -244,7 +248,14 @@ plt.axhline(
     label="Small-Angle Approximation",
 )
 plt.errorbar(
-    amplitudes, periods, yerr=error_mean, xerr=x_error, fmt=".", capsize=2, ms=2, c="black"
+    amplitudes,
+    periods,
+    yerr=error_mean,
+    xerr=x_error,
+    fmt=".",
+    capsize=2,
+    ms=2,
+    c="black",
 )
 plt.xlabel("Amplitude ($rad.$)")
 plt.ylabel("Period (s)")

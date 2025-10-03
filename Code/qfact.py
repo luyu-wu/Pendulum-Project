@@ -10,7 +10,7 @@ my_data = my_data[140:]
 my_data[:, 0] -= my_data[0, 0]  # Set time baseline
 
 length = 0.745  # length in m for trig stuff lol
-b_error = 0.0075/(length*2)
+b_error = 0.0075 / (length * 2)
 # angle and energy
 fig, ax1 = plt.subplots()
 time = my_data[:, 0]
@@ -68,8 +68,8 @@ ax2.plot(time, ke, c="r", label="Kinetic", alpha=0.2)
 ax2.legend()
 ax2.grid(alpha=0.5)
 ax2.set_ylabel("Energy($J/kg$)")
-ax2.set_ylim(0,0.075)
-ax2.set_xlim(0,np.max(time))
+ax2.set_ylim(0, 0.075)
+ax2.set_xlim(0, np.max(time))
 ax2.set_xlabel("Time (s)")
 
 plt.tight_layout()
@@ -90,33 +90,35 @@ plt.xlim(0, 6)
 plt.title("FFT")
 plt.grid(alpha=0.5)
 plt.show()
-
-## Amplitude decay
-# Exponential decay fit for Q-factor calculation
 peak_times = time[peaks]
 peak_amplitudes = np.abs(theta[peaks])
-
-# Fit exponential decay: A(t) = A0 * exp(-t/tau)
-# Taking log: ln(A) = ln(A0) - t/tau
-decay_fit,cov = np.polyfit(peak_times, np.log(peak_amplitudes), 1,cov=True)
+decay_fit, cov = np.polyfit(peak_times, np.log(peak_amplitudes), 1, cov=True)
 fit_err = np.sqrt(np.diag(cov))
 
-# For underdamped oscillator: Q = ω₀/(2γ) where γ = 1/tau
 omega_0 = 2 * np.pi * (1 / (np.average(np.diff(peak_times))))
 Q_factor = omega_0 / (-2 * decay_fit[0])
-Q_fac_error = abs(Q_factor-(omega_0 / (-2 * (decay_fit[0]-fit_err[0]))))
+Q_fac_error = abs(Q_factor - (omega_0 / (-2 * (decay_fit[0] - fit_err[0]))))
 print(Q_fac_error)
 t_fit = np.linspace(-10, np.max(peak_times) + 10, 20)
 amplitude_fit = np.exp(np.polyval(decay_fit, t_fit))
 
 plt.figure()
-plt.errorbar(peak_times,peak_amplitudes, fmt='o', xerr=0, yerr=b_error, markersize=4, alpha=0.5, label="Data")
+plt.errorbar(
+    peak_times,
+    peak_amplitudes,
+    fmt="o",
+    xerr=0,
+    yerr=b_error,
+    markersize=4,
+    alpha=0.5,
+    label="Data",
+)
 plt.plot(t_fit, amplitude_fit, "--", label="Exponential Fit ($Q = 202 \\pm 0.9$)")
 
 plt.fill_between(
     t_fit,
-    np.exp(np.polyval(decay_fit+fit_err, t_fit)),
-    y2=np.exp(np.polyval(decay_fit-fit_err, t_fit)),
+    np.exp(np.polyval(decay_fit + fit_err, t_fit)),
+    y2=np.exp(np.polyval(decay_fit - fit_err, t_fit)),
     alpha=0.2,
 )
 
@@ -129,15 +131,29 @@ plt.legend()
 plt.show()
 
 ## AMPLITUDE CYCLE NUMBER ##
-plt.errorbar(1+np.arange(len(peak_amplitudes)),peak_amplitudes, fmt='o', xerr=0, yerr=b_error, markersize=4, alpha=0.5, label="Data")
+plt.errorbar(
+    1 + np.arange(len(peak_amplitudes)),
+    peak_amplitudes,
+    fmt="o",
+    xerr=0,
+    yerr=b_error,
+    markersize=4,
+    alpha=0.5,
+    label="Data",
+)
 plt.xlabel("Number of Oscillations")
 plt.ylabel("Amplitude ($rad$)")
-plt.axhline(y=np.max(peak_amplitudes)*np.exp(-np.pi/4), color="r", linestyle="--",label="$e^{-\\pi/4}$")
-plt.axvline(x=45,ls='--',c='b')
-plt.axvline(x=55,ls='--',c='b')
+plt.axhline(
+    y=np.max(peak_amplitudes) * np.exp(-np.pi / 4),
+    color="r",
+    linestyle="--",
+    label="$e^{-\\pi/4}$",
+)
+plt.axvline(x=45, ls="--", c="b")
+plt.axvline(x=55, ls="--", c="b")
 
-plt.fill_between(range(45,56),np.ones(11),y2=np.zeros(11),fc='b',alpha=0.2)
-plt.ylim(0.04,0.135)
+plt.fill_between(range(45, 56), np.ones(11), y2=np.zeros(11), fc="b", alpha=0.2)
+plt.ylim(0.04, 0.135)
 plt.legend()
 plt.show()
 
