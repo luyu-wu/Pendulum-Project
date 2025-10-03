@@ -5,15 +5,12 @@ import smplotlib  # noqa
 from numpy import genfromtxt
 from scipy.interpolate import interp1d
 
-my_data = genfromtxt("data2.csv", delimiter=",")
-# my_data2 = genfromtxt('data.csv', delimiter=',')
-
+my_data = genfromtxt("qfact.csv", delimiter=",")
 my_data = my_data[140:]
 my_data[:, 0] -= my_data[0, 0]  # Set time baseline
 
 length = 0.745  # length in m for trig stuff lol
 b_error = 0.0075/(length*2)
-
 # angle and energy
 fig, ax1 = plt.subplots()
 time = my_data[:, 0]
@@ -48,7 +45,7 @@ theta = np.arctan(x_displacement / y_displacement)  # np.arcsin(x_displacement /
 peaks, _ = sgn.find_peaks(theta)
 peaks_b, _ = sgn.find_peaks(-theta)
 
-ax1.plot(time,theta)
+ax1.plot(time, theta)
 ax1.plot(time[peaks], theta[peaks], "ro", markersize=4, label="Peaks")
 ax1.plot(time[peaks_b], theta[peaks_b], "ro", markersize=4)
 ax1.grid(alpha=0.5)
@@ -56,6 +53,7 @@ ax1.grid(alpha=0.5)
 ax1.set_ylabel("Theta ($\\Theta$)")
 ax1.set_xlabel("Time (s)")
 ax1.legend()
+ax1.set_title("Pendulum Angle vs. Time")
 plt.tight_layout()
 plt.show()
 
@@ -70,12 +68,13 @@ ax2.plot(time, ke, c="r", label="Kinetic", alpha=0.2)
 ax2.legend()
 ax2.grid(alpha=0.5)
 ax2.set_ylabel("Energy($J/kg$)")
-ax2.set_ylim(0,6)
+ax2.set_ylim(0,0.075)
+ax2.set_xlim(0,np.max(time))
 ax2.set_xlabel("Time (s)")
 
 plt.tight_layout()
 plt.show()
-"""
+
 ## FOURIER TRANSFORM ##
 freq = np.fft.fftfreq(len(theta), dt)
 fft_x = np.fft.fft(x_displacement)
@@ -91,7 +90,7 @@ plt.xlim(0, 6)
 plt.title("FFT")
 plt.grid(alpha=0.5)
 plt.show()
-"""
+
 ## Amplitude decay
 # Exponential decay fit for Q-factor calculation
 peak_times = time[peaks]
@@ -99,40 +98,29 @@ peak_amplitudes = np.abs(theta[peaks])
 
 # Fit exponential decay: A(t) = A0 * exp(-t/tau)
 # Taking log: ln(A) = ln(A0) - t/tau
-decay_fit = np.polyfit(peak_times[:10], np.log(peak_amplitudes)[:10], 1)
+decay_fit,cov = np.polyfit(peak_times, np.log(peak_amplitudes), 1,cov=True)
+fit_err = np.sqrt(np.diag(cov))
+
 # For underdamped oscillator: Q = ω₀/(2γ) where γ = 1/tau
-omega_0 = 2 * np.pi * (1 / (np.average(np.diff(peak_times[:10]))))
+omega_0 = 2 * np.pi * (1 / (np.average(np.diff(peak_times))))
 Q_factor = omega_0 / (-2 * decay_fit[0])
 
 t_fit = np.linspace(-10, np.max(peak_times) + 10, 20)
 amplitude_fit = np.exp(np.polyval(decay_fit, t_fit))
 
-# Fit exponential decay: A(t) = A0 * exp(-t/tau)
-# Taking log: ln(A) = ln(A0) - t/tau
-decay_fit_1 = np.polyfit(
-    peak_times[15 : len(peak_times) - 1],
-    np.log(peak_amplitudes)[15 : len(peak_times) - 1],
-    1,
-)
-# For underdamped oscillator: Q = ω₀/(2γ) where γ = 1/tau
-omega_0_1 = 2 * np.pi * (1 / (np.average(np.diff(peak_times[:10]))))
-Q_factor_1 = omega_0_1 / (-2 * decay_fit_1[0])
-
-amplitude_fit_1 = np.exp(np.polyval(decay_fit_1, t_fit))
-
 plt.figure()
 plt.errorbar(peak_times,peak_amplitudes, fmt='o', xerr=0, yerr=b_error, markersize=4, alpha=0.5, label="Data")
-plt.plot(t_fit, amplitude_fit, "--", label=f"Exponential Fit 1 (Q = {Q_factor:.2f})")
-plt.plot(
+plt.plot(t_fit, amplitude_fit, "--", label=f"Exponential Fit (Q = {Q_factor:.2f})")
+
+plt.fill_between(
     t_fit,
-    amplitude_fit_1,
-    "--",
-    c="b",
-    label=f"Exponential Fit 2 (Q = {Q_factor_1:.2f})",
+    np.exp(np.polyval(decay_fit+fit_err, t_fit)),
+    y2=np.exp(np.polyval(decay_fit-fit_err, t_fit)),
+    alpha=0.2,
 )
 
+
 plt.xlabel("Time (s)")
-#plt.yscale("log")
 plt.ylabel("Amplitude ($rad$)")
 plt.ylim(np.min(peak_amplitudes) * 0.95, np.max(theta) * 1.05)
 plt.xlim(-10, np.max(peak_times) + 10)
@@ -140,40 +128,19 @@ plt.grid(alpha=0.5)
 plt.legend()
 plt.show()
 
-## Q-FACTOR VS AMPLITUDE ##
+## AMPLITUDE CYCLE NUMBER ##
+plt.errorbar(1+np.arange(len(peak_amplitudes)),peak_amplitudes, fmt='o', xerr=0, yerr=b_error, markersize=4, alpha=0.5, label="Data")
+plt.xlabel("Number of Oscillations")
+plt.ylabel("Amplitude ($rad$)")
+plt.axhline(y=np.max(peak_amplitudes)*np.exp(-np.pi/4), color="r", linestyle="--",label="$e^{\\pi/4}$")
+plt.axvline(x=45,ls='--',c='b')
+plt.axvline(x=55,ls='--',c='b')
 
-# Calculate Q-factor for each amplitude range
-q_amplitudes = []
-q_factors = []
-
-# Use sliding window approach to calculate local Q-factors
-window_size = 20  # Number of consecutive peaks to use for each Q calculation
-
-for i in range(len(peak_amplitudes) - window_size - 15):
-    window_times = peak_times[i : i + window_size]
-    window_amplitudes = peak_amplitudes[i : i + window_size]
-
-    local_decay_fit = np.polyfit(window_times, np.log(window_amplitudes), 1)
-
-    local_period = np.average(np.diff(window_times))
-    local_omega_0 = 2 * np.pi / local_period
-    local_Q = local_omega_0 / (-2 * local_decay_fit[0])
-
-    q_amplitudes.append(np.mean(window_times))
-    q_factors.append(local_Q)
-
-q_amplitudes = np.array(q_amplitudes)
-q_factors = np.array(q_factors)
-
-# Plot Q-factor vs amplitude
-plt.figure()
-plt.plot(q_amplitudes, q_factors, "o-", markersize=4, alpha=0.7)
-# plt.xlabel("Amplitude (rad)")
-plt.xlabel("Time (s)")
-
-plt.ylabel("Q-factor")
-plt.grid(alpha=0.5)
+plt.fill_between(range(45,56),np.ones(11),y2=np.zeros(11),fc='b',alpha=0.2)
+plt.ylim(0.04,0.135)
+plt.legend()
 plt.show()
+
 
 ## PERIOD AMPLITUDE ##
 
@@ -188,7 +155,7 @@ i = 0
 while i < len(periods):
     done = False
     if i + 1 != len(periods):
-        if abs(amplitudes[i] - amplitudes[i + 1]) < 0.05:
+        if abs(amplitudes[i] - amplitudes[i + 1]) < 0.02:
             temp_store_periods.append(periods[i + 1])
             temp_store_amplitudes.append(amplitudes[i + 1])
             periods = np.delete(periods, i + 1)
@@ -209,17 +176,10 @@ while i < len(periods):
 y_error = np.array(y_error)
 y_error[y_error == 0] = y_error.max()
 fit, cov = np.polyfit(amplitudes, periods, 2, cov=True)
+
 print("Fit:", fit)
 fit_err = np.sqrt(np.diag(cov))
 print("Error:", fit_err)
-
-# Variance Calculation
-
-error_mean = 0
-for i_t,i_a in zip(amplitudes,periods):
-    error_mean += (np.polyval(fit,i_t)-i_a)**2
-error_mean /= 3*(len(periods)-3)
-error_mean = np.sqrt(error_mean)
 
 x_vals = np.linspace(amplitudes.min() * 1.2, amplitudes.max() * 1.2, 300)
 plt.figure()
@@ -228,7 +188,6 @@ plt.plot(
     np.polyval(fit, x_vals),
     "--",
     alpha=0.3,
-    label="Quadratic Fit ($T=C+B\\theta+A\\theta^2$)\n$C=1.73\\pm0.0005$\n$B=0.00078\\pm0.0005$\n$A=0.102\\pm0.0007$",
 )
 plt.fill_between(
     x_vals,
@@ -236,35 +195,13 @@ plt.fill_between(
     y2=np.polyval(fit + fit_err, x_vals),
     alpha=0.2,
 )
-
-plt.axhline(
-    y=2 * np.pi * np.sqrt(length / 9.81),
-    color="r",
-    linestyle="--",
-    label="Small-Angle Approximation",
-)
 plt.errorbar(
-    amplitudes, periods, yerr=error_mean, xerr=x_error, fmt=".", capsize=2, ms=2, c="black"
+    amplitudes, periods, yerr=y_error, xerr=x_error, fmt=".", capsize=2, ms=2, c="black"
 )
 plt.xlabel("Amplitude ($rad.$)")
 plt.ylabel("Period (s)")
 plt.xlim(x_vals.min(), x_vals.max())
+plt.title("Pendulum Period vs Oscillation Amplitude")
 plt.grid(alpha=0.5)
 plt.legend()
-plt.show()
-
-plt.errorbar(
-    amplitudes,
-    periods - np.polyval(fit, amplitudes),
-    yerr=error_mean,
-    fmt=".",
-    capsize=2,
-    ms=2,
-    c="black",
-)
-plt.axhline(y=0, color="r", linestyle="--", label="")
-plt.xlabel("Amplitude ($rad.$)")
-plt.grid(alpha=0.5)
-plt.ylabel("Delta Period (s-$s_0$)")
-plt.ylim(-0.015, 0.015)
 plt.show()
