@@ -147,7 +147,7 @@ plt.axhline(
     y=np.max(peak_amplitudes) * np.exp(-np.pi / 4),
     color="r",
     linestyle="--",
-    label="$e^{-\\pi/4}$",
+    label="$A=A_0e^{-\\pi/4}$",
 )
 plt.axvline(x=45, ls="--", c="b")
 plt.axvline(x=55, ls="--", c="b")

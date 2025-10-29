@@ -21,66 +21,60 @@
 %end of packages
 
 \begin{document}
+
 \title{PHY180: Pendulum Project}
 \author{Luyu Wu Vankerkwijk}
-\vspace{40pt}
-
 \date{\today}
 
 
 \maketitle
 
 \section{Introduction}
-This report investigates the behaviors of a pendulum through experimental analysis, and correlates the findings to the offered closed-form equation of the pendulum:
-\vspace{-4pt}
+This paper investigates the behaviors of a pendulum through experimental analysis, and correlates the findings to the offered closed-form equation of the pendulum:
+
 \begin{equation}
     \theta(t) = A_0e^{-t/\tau}cos\left(\frac{2\pi t}{T}+\phi_0\right)
     \label{eq:given}
 \end{equation}
 
-This equation (Wilson, 2025) gives the angle of the pendulum as a function of time, where $A_0$ and $\phi_0$ are initial conditions, and $\tau$ a constant damping factor. T is given as:
-\vspace{-4pt}
-\begin{equation}
-    T=2\sqrt{L}
-    \label{eq:Period}
-\end{equation}
+This equation (Wilson, 2025) defines the angle of the pendulum as a function of time, where $A_0$ and $\phi_0$ are initial conditions, and $\tau$ a constant damping factor.
 
-Experiments were performed using a DIY length-adjustable pendulum and tracked using a camera. Data was processed to determine experimental relationships between amplitude, period, damping, and length.
+Experiments were performed using a home-built pendulum and tracked using a camera. Data was processed to determine experimental relationships between amplitude-period, amplitude-damping. The regime for which the governing equation is experimentally valid is also determined.
 
-The period was found to be quadratically related to the angle of oscillation. For $L=0.75$, where A is the amplitude, and T was fit as $T=aA^2+bA+c$, values $a=1.73\pm0.0005$, $b=0.00078\pm0.0005$ $c=0.102\pm0.0007$ were found. A small-angle regime where the governing equation is experimentally valid (the quadratic term experimentally disappears) was found to be $A\in[-0.15,0.15]$.
-% Replace with parametric form of AA^2 BA + C
-Using the small-angle regime, we investigated the period of the pendulum as a function of length. Equation \ref{eq:Period} was verified to be correct within experimental error. This was done through a power fit of the data resulting in $T=[2.00\pm0.02]L^{0.51\pm0.01}$.
-
-The damping of the system was also investigated as the dimensionless Q-factor ($Q=\pi\frac{\tau}{T}$). Since Q was found to be dependent on amplitude, it was measured at small angles. From lengths varying between $0.15m\rightarrow 0.75m$, the Q-factor was found to roughly align with a negative quadratic fitting term ($-480\pm60L^2$) and had a maxima $\sim200$ for my setup.
-% Include methodology to find Q % Include \tau exponential function
-\begin{figure}[htb]
-    \includegraphics[width=0.8\linewidth]{angle_time.png}
-    \vspace{-8pt}
-    \caption{Plot of pendulum angle against time, along with detected peaks.}
-    \label{fig:angle_time}
-    \vspace{-20pt}
-
-\end{figure}
-\newpage
 \section{Experimental Methods}
 The experimental setup consists of a 3m string, wrapped around a cloth hanger attached to an overhang. A cloth hanger is used such that the string can be spooled to adjust the length of the pendulum.
 
-The top of the string is bound tightly. At the bottom of the pendulum, a metal mass with a ring soldered onto it is tied. The mass of the pendulum blob is 54g while the full string's is roughly 2g. A strand length of $74.5 cm \pm 0.05 cm$ was used in trials where length was kept constant. A calibration ruler is placed on the hanger to provide a reference for tracker.
-
-The pendulum was carefully released by hand. Out-of-plane oscillations were analyzed to ensure minimal effect (see Appendix B).
+The top of the string is bound tightly. At the bottom of the pendulum, a metal mass with a ring soldered onto it is tied. The mass of the pendulum blob is 54 grams while the full string's is roughly 2 grams. A strand length of $74.5 cm \pm 0.05 cm$ was used in trials where length was kept constant. Note that effective length is affected by other factors. A calibration ruler is placed on the hanger to provide a reference for tracker.
 
 \begin{figure}[htb]
-    \includegraphics[width=\linewidth]{setup-tracker.png}
-    \caption{Picture of experimental setup (Left) and OSP Tracker software (Right). Pendulum blob is visible in the lower left corner. OSP Tracker software used to obtain projected pendulum position as a function of time.}
+    \includegraphics[width=0.68\linewidth]{setup.png}
+    \caption{Picture of experimental setup. Pendulum blob is visible in the lower left corner.}
     \label{fig:experiment_setup}
 \end{figure}
 
+\newpage
 
-The pendulum system was recorded from approximately 4 meters away (so as to minimize parallax) using a DSLR camera. A shutter speed of $1/1000$ and motion FPS of $60$ were used so as to minimize motion blurring, and ensure a high time resolution (roughly 30x the period).
+The pendulum system was recorded from approximately 4 meters away (so as to minimize parallax) using a DSLR camera. A shutter speed of $1/1000$ and motion FPS of $60$ were used so as to minimize motion blurring, and maintain a high time resolution.
+
+The pendulum was carefully released by hand. Drops where the pendulum moved significantly out-of-plane were removed (see Appendix B).
+
+
+
+\begin{figure}[htb]
+    \includegraphics[width=0.7\linewidth]{tracker.png}
+    \caption{OSP Tracker software used to obtain projected pendulum position as a function of time.}
+    \label{fig:tracker}
+\end{figure}
 
 All data was processed in a custom Python script (see Appendix A). In processing the data, we assume that the motion of the pendulum is continuous (for interpolation between points) so as to achieve better time resolution.
 
-SciPy peak detection was performed to find local maxima. Periods were found by iterating through adjacent peak points and finding the time difference ($T_n=t_{n+1}-t_{n}$). 'Negative amplitudes' were found with opposite peaks. A visual of this can be seen in Fig. \ref{fig:angle_time}.
+SciPy peak detection was performed to find local maxima. Periods were found by iterating through adjacent peak points and finding the time difference ($T_n=t_{n+1}-t_{n}$). 'Negative amplitudes' were found with opposite peaks.
+
+\begin{figure}[htb]
+    \includegraphics[width=0.8\linewidth]{angle_time.png}
+    \caption{Plot of pendulum angle against time, along with detected peaks.}
+    \label{fig:angle_time}
+\end{figure}
 
 \section{Analysis}
 
@@ -144,47 +138,15 @@ Alternatively, the $Q$-factor can be found by counting the oscillations it takes
 Using oscillation counting, the Q-factor is found to be $200\pm20$, where the larger error as compared to the exponential fit can be explained by the more discretized methodology.
 
 Importantly, the Q-factors found by the two different methods are highly similar and within error of each other ($202\pm0.9$ and $200\pm20$ respectively). This implies an accurate Q-value characterization of the system within the low-amplitude regime.
-\newpage
-\section{Adjusting Length}
 
-Another important part of this lab is investigating the effect of changing the string length of the pendulum.
-
-\subsection{Length vs. Period}
-
-The period as a function of length is given as $T\simeq2\sqrt{L}$ (Wilson, 2025). Notice the dimensional inconsistency in the equation (stating $s\equiv m^{\frac{1}{2}}$).
-
-To verify this equation, we can collect datapoints from by recording videos using different pendulum lengths (which is easily adjustable as mentioned in Methods).
-
-Each video is composed of at least 100 oscillations, and analyzes a range of oscillations $\theta < 0.15$.
-\begin{figure}[htb]
-    \hspace{-20pt}
-    \includegraphics[width=0.9\linewidth]{length-period.png}
-    \caption{Log-Log Oscillation Period vs. Length of Pendulum. Each datapoint here represents a distinct tracked movie, where the error is the potential error of the mean.}
-    \label{fig:lengthperiod}
-\end{figure}
-
-In Fig. \ref{fig:lengthperiod}, we see that the points, when plotted on a log-log plot form a straight line where $2.00ln(L)*0.51=ln(T)$, expanding this, we get $T=2.00L^{0.51}$, very close to the predicted period, $T=2\sqrt{L}$.
-
-\subsection{Length vs. Q-Factor}
-
-Next, we investigate the Q-factor of the pendulum in relation to the length. While no prediction is given in Wilson (Wilson 2024), the Q-factor is given as $Q=\frac{\tau}{T}$. %As we have confirmed T to be positively correlated with L (see fig. \ref{fig:lengthperiod}), this implies the Q-factor to be negatively correlated with length (given $\tau$ is constant).
-
-%However, to expect $\tau$ to be constant is not proper, as we have already seen it is highly sensitive (see fig. \ref{fig:decay}). In reality, based off some napkin math (see Appendix 1), it likely decreases with length. This can explain the negative quadratic term fitted in Fig. \ref{fig:qfactperiod}.
-
-\begin{figure}[htb]
-    \hspace{-20pt}
-    \includegraphics[width=0.9\linewidth]{length-Q.png}
-    \caption{Q-Factor vs. Length of Pendulum. Each datapoint here represents a distinct tracked movie, where the error is the potential error of the mean.}
-    \label{fig:qfactperiod}
-\end{figure}
-\newpage
+\vspace{64pt}
 \section{Determining Uncertainties}
 
 The uncertainty throughout this lab is selected between Type A and Type B depending on which is larger. In this section, the derivation of Type B errors are explained, as they are not immediately clear in certain scenarios, such as when using camera tracking.
 
-The Type B uncertainty of the time of measurement (which propagates to period) is negligible as the camera's shutter speed is $1/1000$. Error in period-amplitude plots is thus calculated through Type A uncertainty. The period error bars likely source from Type-B amplitude uncertainty, which through peak detection (see Appendix C), translates into noise in period measurement.
+The Type B uncertainty of the time of measurement (which propagates to period) is negligible as the camera's shutter speed is $1/1000$. Error in period-amplitude plots is thus calculated through Type A. This noise likely sources from amplitude Type B uncertainty, which through peak detection, translates into noise in period measurement.
 
-The uncertainty for the amplitude of the pendulum seen in Figure 6 and 7 are determined through the Type B uncertainty of the amplitude. The width of the pendulum (of which Tracker may not always select the centre of) causes measurement errors. It is calculated as $\epsilon = \frac{w}{2(l)}$ for a 68\% confidence. Measurement of the width was done in Tracker to calibrate error to the data (see Appendix C). This error may be minimized by using an indicator (e.g. black dot) instead of tracking the whole blob, however, care must be maintained to avoid rotation of the pendulum around its radial axis.
+The uncertainty for the amplitude of the pendulum seen in Figure 6 and 7 are determined through the Type B uncertainty of the amplitude. The width of the pendulum (of which Tracker may not always select the centre of) causes measurement errors. It is calculated as $\epsilon = \frac{w}{2(l)}$ for a 68\% confidence. Measurement of the width was done in Tracker to calibrate error to the data (see Appendix C). This error may be minimized by using an indicator (e.g. black dot) instead of tracking the whole blob.
 
 \section{Conclusion}
 In this report, various aspects of the pendulum's motion were investigated in relation to the offered closed-form equation.
@@ -232,35 +194,6 @@ As mentioned in \textbf{Determining Uncertainties}, the Type B uncertainty of th
     \label{fig:body}
 \end{figure}
 
-\subsection{D: Q-Factor of Different Lengths}
-\begin{figure}[htb]
-    \includegraphics[width=0.4\linewidth]{fitting.png}
-    \caption{Here, data from different length trials are plotted together. Note the Y-axis is in log-scale such that the data is linearized.}
-    \label{fig:body}
-\end{figure}
-
-
-\subsection{E: Napkin Math for $\tau$ Dependence}
-
-Starting with the equation for viscous damping:
-\begin{equation}
-    F_d = -\frac{dr}{dt}c_d
-\end{equation}
-Where r is an arbitrary motion vector.
-
-We can write equation of motion with viscous drag in polar coordinates (by solving torque and moment of inertia):
-\begin{equation}
-    \ddot{\theta} = -sin(\theta)\frac{g}{l}+\dot{\theta}l^2\frac{c_d}{ml^2}
-\end{equation}
-We assume $c_d$ to be constant (as it should be a laminar drag dominated effect).
-
-First, taking the small angle approximation, we obtain:
-\begin{equation}
-    \ddot{\theta} = -\theta\frac{g}{l}+\dot{\theta}lc_d
-\end{equation}
-Solving the ODE, we obtain:
-
-\begin{equation}
 \newpage
 
 \section{References}

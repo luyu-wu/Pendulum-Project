@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.6)  3 OCT 2025 14:22
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.6)  22 OCT 2025 13:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -496,7 +496,11 @@ sed.) on input line 23.
 Class revtex4-2 Info: cite was not loaded (OK!) on input line 23.
 Class revtex4-2 Info: mcite was not loaded (OK!) on input line 23.
 Class revtex4-2 Info: multicol was not loaded (OK!) on input line 23.
- (./main.aux)
+ (./main.aux
+
+LaTeX Warning: Label `fig:body' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
@@ -517,8 +521,7 @@ LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
 LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 23.
 LaTeX Font Info:    ... okay on input line 23.
-
-(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+ (/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count307
 \scratchdimen=\dimen160
@@ -544,107 +547,181 @@ Class revtex4-2 Info: Taking \maketitle back from hyperref on input line 23.
 
 Class revtex4-2 Warning: Assuming \noaffiliation for authors.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 35.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 36.
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 35.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
 
 
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<setup.png, id=60, 592.46344pt x 447.17062pt>
-File: setup.png Graphic file (type png)
-<use setup.png>
-Package pdftex.def Info: setup.png  used on input line 51.
-(pdftex.def)             Requested size: 167.2782pt x 126.25087pt.
-<tracker.png, id=62, 757.32938pt x 548.80031pt>
-File: tracker.png Graphic file (type png)
-<use tracker.png>
-Package pdftex.def Info: tracker.png  used on input line 65.
-(pdftex.def)             Requested size: 172.19925pt x 124.78108pt.
-<angle_time.png, id=63, 482.0409pt x 302.8113pt>
+<angle_time.png, id=81, 482.0409pt x 302.8113pt>
 File: angle_time.png Graphic file (type png)
 <use angle_time.png>
-Package pdftex.def Info: angle_time.png  used on input line 75.
+Package pdftex.def Info: angle_time.png  used on input line 57.
 (pdftex.def)             Requested size: 196.80075pt x 123.62668pt.
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./setup.png> <./tracker
-.png> <./angle_time.png>]
-<amp_per_error_of_mean.png, id=87, 402.5439pt x 359.1819pt>
+
+Underfull \hbox (badness 1360) in paragraph at lines 66--67
+[]\OT1/cmr/m/n/10 The ex-per-i-men-tal setup con-sists of a 3m string,
+ []
+
+<setup-tracker.png, id=83, 1756.5625pt x 668.4975pt>
+File: setup-tracker.png Graphic file (type png)
+<use setup-tracker.png>
+Package pdftex.def Info: setup-tracker.png  used on input line 73.
+(pdftex.def)             Requested size: 246.0pt x 93.61961pt.
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./angle_time.png> <./set
+up-tracker.png (PNG copy)>]
+<amp_per_error_of_mean.png, id=106, 402.5439pt x 359.1819pt>
 File: amp_per_error_of_mean.png Graphic file (type png)
 <use amp_per_error_of_mean.png>
-Package pdftex.def Info: amp_per_error_of_mean.png  used on input line 94.
+Package pdftex.def Info: amp_per_error_of_mean.png  used on input line 99.
 (pdftex.def)             Requested size: 209.1015pt x 186.57835pt.
-<Q-factor-smallangleusage.png, id=89, 548.16795pt x 312.2064pt>
+<Q-factor-smallangleusage.png, id=108, 548.16795pt x 312.2064pt>
 File: Q-factor-smallangleusage.png Graphic file (type png)
 <use Q-factor-smallangleusage.png>
-Package pdftex.def Info: Q-factor-smallangleusage.png  used on input line 103.
+Package pdftex.def Info: Q-factor-smallangleusage.png  used on input line 108.
 (pdftex.def)             Requested size: 196.80075pt x 112.08456pt.
-<decay.png, id=95, 396.7623pt x 385.1991pt>
+<decay.png, id=114, 396.7623pt x 385.1991pt>
 File: decay.png Graphic file (type png)
 <use decay.png>
-Package pdftex.def Info: decay.png  used on input line 116.
+Package pdftex.def Info: decay.png  used on input line 121.
 (pdftex.def)             Requested size: 196.80075pt x 191.065pt.
-<low_angle_q.png, id=97, 493.24275pt x 336.0555pt>
+<low_angle_q.png, id=116, 493.24275pt x 336.0555pt>
 File: low_angle_q.png Graphic file (type png)
 <use low_angle_q.png>
-Package pdftex.def Info: low_angle_q.png  used on input line 123.
+Package pdftex.def Info: low_angle_q.png  used on input line 128.
 (pdftex.def)             Requested size: 196.80075pt x 134.08138pt.
+ [2 <./amp_per_error_of_mean.png> <./Q-factor-smallangleusage.png> <./decay.png
+>]
 
-[2 <./amp_per_error_of_mean.png> <./Q-factor-smallangleusage.png> <./decay.png>
- <./low_angle_q.png>]
-<count_decay.png, id=114, 404.712pt x 383.7537pt>
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 136.
+
+<count_decay.png, id=132, 404.712pt x 383.7537pt>
 File: count_decay.png Graphic file (type png)
 <use count_decay.png>
-Package pdftex.def Info: count_decay.png  used on input line 134.
-(pdftex.def)             Requested size: 196.80075pt x 186.61218pt.
- [3 <./count_decay.png>]
-<out-of-plane.png, id=126, 461.0826pt x 303.534pt>
+Package pdftex.def Info: count_decay.png  used on input line 139.
+(pdftex.def)             Requested size: 221.3985pt x 209.93504pt.
+<length-period.png, id=133, 396.7623pt x 387.00584pt>
+File: length-period.png Graphic file (type png)
+<use length-period.png>
+Package pdftex.def Info: length-period.png  used on input line 161.
+(pdftex.def)             Requested size: 221.3985pt x 215.96pt.
+<length-Q.png, id=135, 406.8801pt x 385.1991pt>
+File: length-Q.png Graphic file (type png)
+<use length-Q.png>
+Package pdftex.def Info: length-Q.png  used on input line 176.
+(pdftex.def)             Requested size: 221.3985pt x 209.60313pt.
+[3 <./low_angle_q.png> <./count_decay.png> <./length-period.png>]
+
+LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
+ on input line 181.
+
+[4 <./length-Q.png>]
+<out-of-plane.png, id=157, 461.0826pt x 303.534pt>
 File: out-of-plane.png Graphic file (type png)
 <use out-of-plane.png>
-Package pdftex.def Info: out-of-plane.png  used on input line 184.
+Package pdftex.def Info: out-of-plane.png  used on input line 221.
 (pdftex.def)             Requested size: 203.99689pt x 134.29178pt.
-<pendulum-body.png, id=128, 363.60844pt x 286.82156pt>
+<pendulum-body.png, id=159, 363.60844pt x 286.82156pt>
 File: pendulum-body.png Graphic file (type png)
 <use pendulum-body.png>
-Package pdftex.def Info: pendulum-body.png  used on input line 193.
+Package pdftex.def Info: pendulum-body.png  used on input line 230.
 (pdftex.def)             Requested size: 101.99844pt x 80.45828pt.
- [4 <./out-of-plane.png> <./pendulum-body.png>] (./main.bbl) [5] (./main.aux)
+<fitting.png, id=160, 404.712pt x 385.1991pt>
+File: fitting.png Graphic file (type png)
+<use fitting.png>
+Package pdftex.def Info: fitting.png  used on input line 237.
+(pdftex.def)             Requested size: 203.99689pt x 194.16252pt.
+ [5 <./out-of-plane.png> <./pendulum-body.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 243.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `\tau' on input line 243.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (Unicode):
+(hyperref)                removing `math shift' on input line 243.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.264 \newpage
+              
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Display math should end with $$.
+<to be read again> 
+                   \tex_par:D 
+l.264 \newpage
+              
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+[6 <./fitting.png>] (./main.bbl)
+
+! LaTeX Error: \begin{equation} on input line 263 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.278 \end{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+[7] (./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
  ***********
+
+
+LaTeX Warning: There were multiply-defined labels.
+
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9A70C8382C53428D01D34221AD859901;2042.
- ) 
+(rerunfilecheck)             Checksum: 78674B08C56E3EEE6052287736666D31;2939.
+ )
+(\end occurred inside a group at level 1)
+
+### semi simple group (level 1) entered at line 263 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 13373 strings out of 475171
- 202877 string characters out of 5767096
- 723487 words of memory out of 5000000
- 36133 multiletter control sequences out of 15000+600000
+ 13409 strings out of 475171
+ 203475 string characters out of 5767096
+ 723940 words of memory out of 5000000
+ 36155 multiletter control sequences out of 15000+600000
  568846 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 79i,7n,93p,655b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
-/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></u
-sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb
->
-Output written on main.pdf (5 pages, 1468891 bytes).
+ 79i,7n,93p,675b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pf
+b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/font
+s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
+share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
+Output written on main.pdf (7 pages, 1782723 bytes).
 PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
- 155 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 272 PDF objects out of 1000 (max. 8388607)
+ 201 compressed objects within 3 object streams
+ 44 named destinations out of 1000 (max. 500000)
+ 213 words of extra memory for PDF output out of 10000 (max. 10000000)
 
