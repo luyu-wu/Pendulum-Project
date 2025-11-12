@@ -97,21 +97,22 @@ plt.show()
 peak_times = time[peaks]
 peak_amplitudes = np.abs(theta[peaks])
 
-decay_fit = np.polyfit(peak_times[:10], np.log(peak_amplitudes)[:10], 1)
+decay_fit, cov = np.polyfit(peak_times[:10], np.log(peak_amplitudes)[:10], 1, cov=True)
+fit_err = np.sqrt(np.diag(cov))
 omega_0 = 2 * np.pi * (1 / (np.average(np.diff(peak_times[:10]))))
 Q_factor = omega_0 / (-2 * decay_fit[0])
+Q_fac_error = abs(Q_factor - (omega_0 / (-2 * (decay_fit[0] - fit_err[0]))))
 
 t_fit = np.linspace(-10, np.max(peak_times) + 10, 20)
 amplitude_fit = np.exp(np.polyval(decay_fit, t_fit))
 
-# Taking log: ln(A) = ln(A0) - t/tau
-decay_fit_1 = np.polyfit(
-    peak_times[15 : len(peak_times) - 1],
-    np.log(peak_amplitudes)[15 : len(peak_times) - 1],
-    1,
-)
+
+
+decay_fit_1, cov = np.polyfit(peak_times[15 : len(peak_times) - 1], np.log(peak_amplitudes)[15 : len(peak_times) - 1], 1, cov=True)
+fit_err_1 = np.sqrt(np.diag(cov))
 omega_0_1 = 2 * np.pi * (1 / (np.average(np.diff(peak_times[:10]))))
-Q_factor_1 = omega_0_1 / (-2 * decay_fit_1[0])
+Q_factor_1 = int(omega_0_1 / (-2 * decay_fit_1[0]))
+Q_fac_error_1 = abs(Q_factor_1 - (omega_0_1 / (-2 * (decay_fit_1[0] - fit_err_1[0]))))
 
 amplitude_fit_1 = np.exp(np.polyval(decay_fit_1, t_fit))
 
@@ -126,13 +127,13 @@ plt.errorbar(
     alpha=0.5,
     label="Data",
 )
-plt.plot(t_fit, amplitude_fit, "--", label=f"Exponential Fit 1 (Q = {Q_factor:.2f})")
+plt.plot(t_fit, amplitude_fit, "--", label=f"Exp Fit in $t\\in[0s,25s]$\n($Q = "+str(int(Q_factor*10)/10) +"\\pm"+str(int(Q_fac_error)) +"$)")
 plt.plot(
     t_fit,
     amplitude_fit_1,
     "--",
     c="b",
-    label=f"Exponential Fit 2 (Q = {Q_factor_1:.2f})",
+    label=f"Exp Fit in $t\\in[75s,125s]$\n($Q = "+str(int(Q_factor_1)) +"\\pm"+str(int(Q_fac_error_1*10)/10) +"$)",
 )
 
 plt.xlabel("Time (s)")
@@ -145,7 +146,7 @@ plt.legend()
 plt.show()
 
 ## Q-FACTOR VS AMPLITUDE ##
-
+'''
 # Calculate Q-factor for each amplitude range
 q_amplitudes = []
 q_factors = []
@@ -178,7 +179,7 @@ plt.xlabel("Time (s)")
 plt.ylabel("Q-factor")
 plt.grid(alpha=0.5)
 plt.show()
-
+'''
 ## PERIOD AMPLITUDE ##
 
 periods = np.concatenate((np.diff(time[peaks]), np.diff(time[peaks_b])))
@@ -232,7 +233,7 @@ plt.plot(
     np.polyval(fit, x_vals),
     "--",
     alpha=0.3,
-    label="Quadratic Fit ($T=C+B\\theta+A\\theta^2$)\n$C=1.73\\pm0.0005$\n$B=0.00078\\pm0.0005$\n$A=0.102\\pm0.0007$",
+    label="Quadratic Fit ($T=c+bA+aA^2$)\n$c=1.73\\pm0.0005$\n$b=0.000703\\pm0.0005$\n$a=0.109\\pm0.0007$",
 )
 plt.fill_between(
     x_vals,
@@ -245,7 +246,7 @@ plt.axhline(
     y=2 * np.pi * np.sqrt(length / 9.81),
     color="r",
     linestyle="--",
-    label="Small-Angle Approximation",
+    label="Given Equation",
 )
 plt.errorbar(
     amplitudes,

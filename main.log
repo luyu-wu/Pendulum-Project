@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.9.6)  22 OCT 2025 13:32
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2026/dev/Arch Linux) (preloaded format=pdflatex 2025.11.11)  11 NOV 2025 22:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -498,7 +498,7 @@ Class revtex4-2 Info: mcite was not loaded (OK!) on input line 23.
 Class revtex4-2 Info: multicol was not loaded (OK!) on input line 23.
  (./main.aux
 
-LaTeX Warning: Label `fig:body' multiply defined.
+LaTeX Warning: Label `fig:qfact_counting' multiply defined.
 
 )
 \openout1 = `main.aux'.
@@ -558,129 +558,89 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 36.
 (/usr/share/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-<angle_time.png, id=81, 482.0409pt x 302.8113pt>
-File: angle_time.png Graphic file (type png)
-<use angle_time.png>
-Package pdftex.def Info: angle_time.png  used on input line 57.
-(pdftex.def)             Requested size: 196.80075pt x 123.62668pt.
-
-Underfull \hbox (badness 1360) in paragraph at lines 66--67
+Underfull \hbox (badness 1360) in paragraph at lines 64--65
 []\OT1/cmr/m/n/10 The ex-per-i-men-tal setup con-sists of a 3m string,
  []
 
-<setup-tracker.png, id=83, 1756.5625pt x 668.4975pt>
-File: setup-tracker.png Graphic file (type png)
-<use setup-tracker.png>
-Package pdftex.def Info: setup-tracker.png  used on input line 73.
-(pdftex.def)             Requested size: 246.0pt x 93.61961pt.
-[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./angle_time.png> <./set
-up-tracker.png (PNG copy)>]
-<amp_per_error_of_mean.png, id=106, 402.5439pt x 359.1819pt>
+<setup.png, id=83, 592.46344pt x 447.17062pt>
+File: setup.png Graphic file (type png)
+<use setup.png>
+Package pdftex.def Info: setup.png  used on input line 71.
+(pdftex.def)             Requested size: 147.6015pt x 111.40344pt.
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./setup.png>]
+<amp_per_error_of_mean.png, id=107, 407.6028pt x 315.0972pt>
 File: amp_per_error_of_mean.png Graphic file (type png)
 <use amp_per_error_of_mean.png>
-Package pdftex.def Info: amp_per_error_of_mean.png  used on input line 99.
-(pdftex.def)             Requested size: 209.1015pt x 186.57835pt.
-<Q-factor-smallangleusage.png, id=108, 548.16795pt x 312.2064pt>
+Package pdftex.def Info: amp_per_error_of_mean.png  used on input line 96.
+(pdftex.def)             Requested size: 209.1015pt x 161.6446pt.
+<Q-factor-smallangleusage.png, id=109, 548.16795pt x 312.2064pt>
 File: Q-factor-smallangleusage.png Graphic file (type png)
 <use Q-factor-smallangleusage.png>
-Package pdftex.def Info: Q-factor-smallangleusage.png  used on input line 108.
+Package pdftex.def Info: Q-factor-smallangleusage.png  used on input line 105.
 (pdftex.def)             Requested size: 196.80075pt x 112.08456pt.
-<decay.png, id=114, 396.7623pt x 385.1991pt>
+<decay.png, id=113, 396.7623pt x 385.1991pt>
 File: decay.png Graphic file (type png)
 <use decay.png>
-Package pdftex.def Info: decay.png  used on input line 121.
+Package pdftex.def Info: decay.png  used on input line 119.
 (pdftex.def)             Requested size: 196.80075pt x 191.065pt.
-<low_angle_q.png, id=116, 493.24275pt x 336.0555pt>
+<low_angle_q.png, id=115, 493.24275pt x 336.0555pt>
 File: low_angle_q.png Graphic file (type png)
 <use low_angle_q.png>
-Package pdftex.def Info: low_angle_q.png  used on input line 128.
+Package pdftex.def Info: low_angle_q.png  used on input line 126.
 (pdftex.def)             Requested size: 196.80075pt x 134.08138pt.
  [2 <./amp_per_error_of_mean.png> <./Q-factor-smallangleusage.png> <./decay.png
->]
-
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 136.
-
+> <./low_angle_q.png>]
 <count_decay.png, id=132, 404.712pt x 383.7537pt>
 File: count_decay.png Graphic file (type png)
 <use count_decay.png>
-Package pdftex.def Info: count_decay.png  used on input line 139.
+Package pdftex.def Info: count_decay.png  used on input line 137.
 (pdftex.def)             Requested size: 221.3985pt x 209.93504pt.
 <length-period.png, id=133, 396.7623pt x 387.00584pt>
 File: length-period.png Graphic file (type png)
 <use length-period.png>
-Package pdftex.def Info: length-period.png  used on input line 161.
+Package pdftex.def Info: length-period.png  used on input line 160.
 (pdftex.def)             Requested size: 221.3985pt x 215.96pt.
-<length-Q.png, id=135, 406.8801pt x 385.1991pt>
+ [3 <./count_decay.png> <./length-period.png>]
+<length-Q.png, id=149, 406.8801pt x 385.1991pt>
 File: length-Q.png Graphic file (type png)
 <use length-Q.png>
-Package pdftex.def Info: length-Q.png  used on input line 176.
+Package pdftex.def Info: length-Q.png  used on input line 181.
 (pdftex.def)             Requested size: 221.3985pt x 209.60313pt.
-[3 <./low_angle_q.png> <./count_decay.png> <./length-period.png>]
 
-LaTeX Warning: A float is stuck (cannot be placed); try class option [floatfix]
- on input line 181.
+Underfull \hbox (badness 1067) in paragraph at lines 195--196
+[]\OT1/cmr/m/n/10 The am-pli-tude un-cer-tainty are es-ti-mated through
+ []
 
 [4 <./length-Q.png>]
-<out-of-plane.png, id=157, 461.0826pt x 303.534pt>
+<out-of-plane.png, id=161, 461.0826pt x 303.534pt>
 File: out-of-plane.png Graphic file (type png)
 <use out-of-plane.png>
-Package pdftex.def Info: out-of-plane.png  used on input line 221.
+Package pdftex.def Info: out-of-plane.png  used on input line 242.
 (pdftex.def)             Requested size: 203.99689pt x 134.29178pt.
-<pendulum-body.png, id=159, 363.60844pt x 286.82156pt>
+<pendulum-body.png, id=163, 363.60844pt x 286.82156pt>
 File: pendulum-body.png Graphic file (type png)
 <use pendulum-body.png>
-Package pdftex.def Info: pendulum-body.png  used on input line 230.
+Package pdftex.def Info: pendulum-body.png  used on input line 251.
 (pdftex.def)             Requested size: 101.99844pt x 80.45828pt.
-<fitting.png, id=160, 404.712pt x 385.1991pt>
+<fitting.png, id=164, 605.26125pt x 327.74445pt>
 File: fitting.png Graphic file (type png)
 <use fitting.png>
-Package pdftex.def Info: fitting.png  used on input line 237.
-(pdftex.def)             Requested size: 203.99689pt x 194.16252pt.
+Package pdftex.def Info: fitting.png  used on input line 259.
+(pdftex.def)             Requested size: 306.00311pt x 165.69716pt.
  [5 <./out-of-plane.png> <./pendulum-body.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 243.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\tau' on input line 243.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 243.
-
-! Missing $ inserted.
-<inserted text> 
-                $
-l.264 \newpage
-              
-I've inserted a begin-math/end-math symbol since I think
-you left one out. Proceed, with fingers crossed.
-
-! Display math should end with $$.
-<to be read again> 
-                   \tex_par:D 
-l.264 \newpage
-              
-The `$' that I just saw supposedly matches a previous `$$'.
-So I shall assume that you typed `$$' both times.
-
-[6 <./fitting.png>] (./main.bbl)
-
-! LaTeX Error: \begin{equation} on input line 263 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.278 \end{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-[7] (./main.aux)
+<non-log-period.png, id=175, 396.7623pt x 387.00584pt>
+File: non-log-period.png Graphic file (type png)
+<use non-log-period.png>
+Package pdftex.def Info: non-log-period.png  used on input line 289.
+(pdftex.def)             Requested size: 153.00156pt x 149.24277pt.
+<length-q-counting.png, id=176, 610.32014pt x 322.3242pt>
+File: length-q-counting.png Graphic file (type png)
+<use length-q-counting.png>
+Package pdftex.def Info: length-q-counting.png  used on input line 297.
+(pdftex.def)             Requested size: 255.0pt x 134.67192pt.
+ [6 <./fitting.png> <./non-log-period.png> <./length-q-counting.png>] (./main.b
+bl) [7]
+(./main.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
@@ -690,38 +650,35 @@ L3 programming layer <2025-01-18>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 78674B08C56E3EEE6052287736666D31;2939.
- )
-(\end occurred inside a group at level 1)
-
-### semi simple group (level 1) entered at line 263 (\begingroup)
-### bottom level 
+(rerunfilecheck)             Checksum: 099B1D52A2AC952B271F40942887DABB;3199.
+ ) 
 Here is how much of TeX's memory you used:
- 13409 strings out of 475171
- 203475 string characters out of 5767096
- 723940 words of memory out of 5000000
- 36155 multiletter control sequences out of 15000+600000
- 568846 words of font info for 73 fonts, out of 8000000 for 9000
+ 13416 strings out of 475171
+ 203644 string characters out of 5767094
+ 733248 words of memory out of 5000000
+ 36164 multiletter control sequences out of 15000+600000
+ 569192 words of font info for 74 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 79i,7n,93p,675b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pf
-b></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/font
-s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/
-share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
-/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmsy7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on main.pdf (7 pages, 1782723 bytes).
+ 79i,7n,93p,719b,519s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr
+/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></u
+sr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on main.pdf (7 pages, 1636732 bytes).
 PDF statistics:
- 272 PDF objects out of 1000 (max. 8388607)
- 201 compressed objects within 3 object streams
- 44 named destinations out of 1000 (max. 500000)
- 213 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 281 PDF objects out of 1000 (max. 8388607)
+ 206 compressed objects within 3 object streams
+ 41 named destinations out of 1000 (max. 500000)
+ 218 words of extra memory for PDF output out of 10000 (max. 10000000)
 

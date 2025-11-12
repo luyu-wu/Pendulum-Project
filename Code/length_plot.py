@@ -113,9 +113,9 @@ plt.plot(
 
 plt.xlabel("Length ($m$)")
 plt.ylabel("Period ($s$)")
-plt.xscale("log")
-plt.yscale("log")
-plt.grid(which="both", alpha=0.5)
+#plt.xscale("log")
+#plt.yscale("log")
+plt.grid(which="both", alpha=0.1)
 
 plt.legend(loc=2, frameon=True)
 plt.show()
@@ -130,7 +130,7 @@ plt.errorbar(
     alpha=0.5,
     label="$\\tau$ Fitting Method",
 )
-plt.scatter(lengths, qfact_counting, marker="x", label="Q-Counting Method")
+#plt.scatter(lengths, qfact_counting, marker="x", label="Q-Counting Method")
 
 fit, cov = np.polyfit(lengths, qfact, 2, cov=True)
 err = np.sqrt(np.diag(cov))
@@ -141,22 +141,22 @@ plt.plot(
     x_fit,
     y_fit,
     "--",
-    label="Fit: $Q = (A)L^2+(B)L+(C)$\n$A:"
+    label="Fit: $Q = aL^2+bL+c$\n$a:"
     + str(int(fit[0]))
     + "\\pm"
     + str(int(err[0] / 10) * 10)
-    + "$\n$B:"
-    + str(int(fit[1]))
+    + "$\n$b:"
+    + str(int(fit[1]/10)*10)
     + "\\pm"
     + str(int(err[1] / 10) * 10)
-    + "$\n$C:"
+    + "$\n$c:"
     + str(int(fit[2]))
     + "\\pm"
     + str(int(err[2] / 10) * 10)
     + "$",
 )
-plt.xlim(0, 1)
-plt.ylim(0, 280)
+plt.xlim(0.2, 0.8)
+plt.ylim(100, 250)
 plt.xlabel("Length (m)")
 plt.ylabel("Q-Factor")
 plt.grid(alpha=0.5)
