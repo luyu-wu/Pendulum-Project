@@ -1,14 +1,14 @@
 # Fdb version 4
-["bibtex main"] 1762919848.91031 "main.aux" "main.bbl" "main" 1762919850.47366 0
-  "./mainNotes.bib" 1762919850.36404 104 4d8bb863c86f3d7b03a471e9d4707f34 ""
+["bibtex main"] 1762919935.862 "main.aux" "main.bbl" "main" 1763654842.48431 0
+  "./mainNotes.bib" 1763654842.12094 104 4d8bb863c86f3d7b03a471e9d4707f34 ""
   "/usr/share/texmf-dist/bibtex/bst/revtex/apsrev4-2.bst" 1755987285 69609 e9dea59f0e753ccda3ddc8f5806d846d ""
-  "main.aux" 1762919850.36404 9490 1dba16871bf0b34863b3f0a8285e9e74 "pdflatex"
+  "main.aux" 1763654842.11994 9490 d6ae0f6fd075f318e3e4fa087ba91333 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1762919848.95315 "/home/chrysanthemum/Code/Pendulum-Project/main.tex" "main.pdf" "main" 1762919850.47382 0
-  "/home/chrysanthemum/Code/Pendulum-Project/main.tex" 1762919847.30307 21395 45dab5ce23bbd18695598c595681fb6f ""
+["pdflatex"] 1763654839.22526 "/home/chrysanthemum/Code/Pendulum-Project/main.tex" "main.pdf" "main" 1763654842.4848 0
+  "/home/chrysanthemum/Code/Pendulum-Project/main.tex" 1763654839.29693 21408 e953eacbd9e1c337d3e31be5fe6eb980 ""
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1755987285 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1755987285 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "/usr/share/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1755987285 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -135,8 +135,8 @@
   "/usr/share/texmf-dist/tex/latex/xcolor/svgnam.def" 1755987285 4705 34614fec2d4cfd7794c82198c9076871 ""
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1755987285 55384 b454dec21c2d9f45ec0b793f0995b992 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1755987285 42087 b0f9697c952c8f5a8eede4134282cb0d ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1762881528 5311557 9da84c45f5b388655502706482323571 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1762881463 2008236 406c51e7437dae610fda9d7626626e2c ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1763018216 5311557 9da84c45f5b388655502706482323571 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1763018201 2686925 2dce0fb5c0c3452f96523ad46738d60f ""
   "Q-factor-smallangleusage.png" 1759506108.79409 81671 c8afd92384063be275d6f3c1223c56dc ""
   "amp_per_error_of_mean.png" 1762730743.45158 99046 8f0fa2f2196583a61fdcd7b0da09fb3b ""
   "count_decay.png" 1761106231.98315 86970 36201145d8ccf14a066f2c7af2e4dc68 ""
@@ -146,10 +146,10 @@
   "length-period.png" 1760676392.64718 72906 782b12de1cae246b1eb32bd61071ba51 ""
   "length-q-counting.png" 1761865245.53741 103475 b4bb22063c323fa0ee4ebc2d8e023f8b ""
   "low_angle_q.png" 1759506714.15093 130311 ce41e37982f1d6e7c8332e71333505f3 ""
-  "main.aux" 1762919850.36404 9490 1dba16871bf0b34863b3f0a8285e9e74 "pdflatex"
-  "main.bbl" 1762919848.95005 1982 35453d3875d823f0ec9445e740a573d9 "bibtex main"
-  "main.out" 1762919850.36404 3199 099b1d52a2ac952b271f40942887dabb "pdflatex"
-  "main.tex" 1762919847.30307 21395 45dab5ce23bbd18695598c595681fb6f ""
+  "main.aux" 1763654842.11994 9490 d6ae0f6fd075f318e3e4fa087ba91333 "pdflatex"
+  "main.bbl" 1762919935.89713 1982 35453d3875d823f0ec9445e740a573d9 "bibtex main"
+  "main.out" 1763654842.12094 3199 099b1d52a2ac952b271f40942887dabb "pdflatex"
+  "main.tex" 1763654839.29693 21408 e953eacbd9e1c337d3e31be5fe6eb980 ""
   "non-log-period.png" 1762896486.93615 98420 fa51111a71c9bc20443e6fdf63c68c05 ""
   "out-of-plane.png" 1759264254.51208 167009 68bcdfbcedad64faeda0d58f026f6777 ""
   "pendulum-body.png" 1759462674.90887 13178 8a1d1de723254b2bc1676e2b64c00a81 ""
